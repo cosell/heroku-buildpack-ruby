@@ -1,7 +1,6 @@
 # Heroku Buildpack for Ruby
-# Heroku Buildpack for Ruby
 
-### This buildpack is customized to run additional build commands during the bundle install phase (see [here](lib/language_pack/ruby.rb#L826)).
+### This buildpack is customized to run additional build commands during the bundle install phase (see [here](lib/language_pack/ruby.rb#L826) and [here](lib/language_pack/ruby.rb#L1301)).
 <br/>
 
 ![ruby](https://cloud.githubusercontent.com/assets/51578/13712725/3c6b3368-e793-11e5-83c1-728440111358.png)
