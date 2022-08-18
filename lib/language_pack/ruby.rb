@@ -646,7 +646,7 @@ EOF
 
   # vendors individual binary into the slug
   # @param [String] name of the binary package from S3.
-  #   Example: https://s3.amazonaws.com/language-pack-ruby/node-0.4.7.tgz, where name is "node-0.4.7"
+  #   Example: https://heroku-buildpack-ruby.s3.us-east-1.amazonaws.com/node-0.4.7.tgz, where name is "node-0.4.7"
   def install_binary(name)
     topic "Installing #{name}"
     bin_dir = "bin"
@@ -909,25 +909,25 @@ require 'cgi'
 require 'uri'
 
 begin
-uri = URI.parse(ENV["DATABASE_URL"])
+  uri = URI.parse(ENV["DATABASE_URL"])
 rescue URI::InvalidURIError
-raise "Invalid DATABASE_URL"
+  raise "Invalid DATABASE_URL"
 end
 
 raise "No RACK_ENV or RAILS_ENV found" unless ENV["RAILS_ENV"] || ENV["RACK_ENV"]
 
 def attribute(name, value, force_string = false)
-if value
-  value_string =
-    if force_string
-      '"' + value + '"'
-    else
-      value
-    end
-  "\#{name}: \#{value_string}"
-else
-  ""
-end
+  if value
+    value_string =
+      if force_string
+        '"' + value + '"'
+      else
+        value
+      end
+    "\#{name}: \#{value_string}"
+  else
+    ""
+  end
 end
 
 adapter = uri.scheme
@@ -946,15 +946,15 @@ params = CGI.parse(uri.query || "")
 %>
 
 <%= ENV["RAILS_ENV"] || ENV["RACK_ENV"] %>:
-<%= attribute "adapter",  adapter %>
-<%= attribute "database", database %>
-<%= attribute "username", username %>
-<%= attribute "password", password, true %>
-<%= attribute "host",     host %>
-<%= attribute "port",     port %>
+  <%= attribute "adapter",  adapter %>
+  <%= attribute "database", database %>
+  <%= attribute "username", username %>
+  <%= attribute "password", password, true %>
+  <%= attribute "host",     host %>
+  <%= attribute "port",     port %>
 
 <% params.each do |key, value| %>
-<%= key %>: <%= value.first %>
+  <%= key %>: <%= value.first %>
 <% end %>
         DATABASE_YML
       end

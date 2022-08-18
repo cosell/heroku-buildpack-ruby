@@ -2,6 +2,56 @@
 
 ## Main (unreleased)
 
+## v244 (2022/07/25)
+
+* Default Ruby version is now 3.1.2 (https://github.com/heroku/heroku-buildpack-ruby/pull/1316)
+
+## v243 (2022/06/14)
+
+* Switch away from deprecated path-based S3 URLs (https://github.com/heroku/heroku-buildpack-ruby/pull/1311)
+* Adjust curl retry and connection timeout handling (https://github.com/heroku/heroku-buildpack-ruby/pull/1312)
+
+## v242 (2022/06/07)
+
+* Ensure `bin/release` exits zero if `tmp/heroku-buildpack-release-step.yml` does not exist (https://github.com/heroku/heroku-buildpack-ruby/pull/1309)
+* Bootstrap Ruby version used by the buildpack internals is updated to Ruby 3.1.2 (https://github.com/heroku/heroku-buildpack-ruby/pull/1310)
+
+## v241 (2022/06/06)
+
+* `bin/release` is re-written in bash, so it supports Heroku-22 (https://github.com/heroku/heroku-buildpack-ruby/pull/1308)
+* Download presence check now includes heroku-22 (https://github.com/heroku/heroku-buildpack-ruby/pull/1290)
+
+## v240 (2022/04/05)
+
+* Add initial support for heroku-22 (https://github.com/heroku/heroku-buildpack-ruby/pull/1289)
+* Bundler 2.x is now 2.3.10 (https://github.com/heroku/heroku-buildpack-ruby/pull/1296)
+
+## v239 (2022/03/02)
+
+* Rollback bundler 2.x change. Bundler 2.x is now back at 2.2.33 (https://github.com/heroku/heroku-buildpack-ruby/pull/1281)
+
+## v238 (2022/03/02)
+
+* Bundler 2.x is now 2.3.7 (https://github.com/heroku/heroku-buildpack-ruby/pull/1276)
+
+## v237 (2022/02/24)
+
+* Default Ruby version is now 3.0.3 (https://github.com/heroku/heroku-buildpack-ruby/pull/1270)
+
+## v236 (2022/01/04)
+
+* Fix deprecated rake tasks for Rails 7 on Heroku CI (https://github.com/heroku/heroku-buildpack-ruby/pull/1257)
+
+## v235 (2022/01/03)
+
+* Bundler 2.x is now 2.2.33 (https://github.com/heroku/heroku-buildpack-ruby/pull/1248)
+
+## v234 (12/16/2021)
+
+* Fix YML indentation from v233 (https://github.com/heroku/heroku-buildpack-ruby/pull/1252)
+
+## v233 (12/16/2021)
+
 * Default node version now 16.13.1, yarn is 1.22.17 (https://github.com/heroku/heroku-buildpack-ruby/pull/1238)
 * Default Ruby version is now 2.7.5 (https://github.com/heroku/heroku-buildpack-ruby/pull/1237)
 * Remove instrumentation and LPXC logic (https://github.com/heroku/heroku-buildpack-ruby/pull/1229)
